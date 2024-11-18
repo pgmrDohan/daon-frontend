@@ -1,0 +1,32 @@
+.character {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	img {
+		width: 80%;
+	}
+
+	.tag {
+		color:var(--theme-text);
+		display: flex;
+		flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+		div {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			border-radius: 1000px;
+			height: var(--font-size-body);
+			width: fit-content;
+			background-color: var(--color-blue);
+		}
+		svg{
+			width: var(--font-size-subTitle);
+			color: var(--color-grey-light);
+		}
+	}
+}

@@ -1,11 +1,11 @@
-import { Cash } from "@/components";
+import { Cash, Character } from "@/components";
 import { get_userdata } from "@/utils";
 import { getCookie } from "@/utils/cookies";
 import { useEffect, useState } from "react";
-import { Settings } from "lucide-react";
+import { Settings, Plus } from "lucide-react";
 import styles from "./index.module.scss";
-import { diarys, char, shop, mission, badge, oto } from "@/assets";
-import { useNavigate } from "react-router-dom";
+import { diarys, char, shop, mission, badge, oto, character } from "@/assets";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 interface DataType {
   // cash: number,
@@ -20,31 +20,34 @@ interface DataType {
 
 export function Home() {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const [data, setData] = useState<DataType>();
 
   const iconButton = [
     {
-      router: "diarys",
+      icon: "diarys",
       text: "일기보기",
     },
     {
-      router: "char",
+      icon: "char",
       text: "캐릭터",
     },
     {
-      router: "shop",
+      icon: "shop",
       text: "상점",
     },
     {
-      router: "mission",
+      icon: "mission",
       text: "미션",
     },
     {
-      router: "badge",
+      icon: "badge",
       text: "뱃지",
     },
     {
-      router: "oto",
+      icon: "oto",
+      url: "https://www.1388.go.kr/cco/YTOSP_SC_CCH_01",
       text: "상담",
     },
   ];
@@ -56,6 +59,10 @@ export function Home() {
     mission,
     badge,
     oto,
+  };
+
+  const handleClick = (link: string) => {
+    window.open(link, "_blank")?.focus();
   };
 
   useEffect(() => {
@@ -73,20 +80,37 @@ export function Home() {
 
   return data === undefined ? null : (
     <>
-      <div className={`${styles.headers} mb-lg`}>
+      <div className={`${styles.headers}`}>
         <Cash value={1} />
         <Settings className={styles.settingsIcon} />
       </div>
-      <div className={styles.iconButton}>
+      <div className={`${styles.iconButton}`}>
         {iconButton.map((item, i) => {
           return (
-            <div key={i} onClick={() => navigate(`/${item.router}`)}>
-              <img src={iconMap[item.router]} alt={item.router} />
+            <div
+              key={i}
+              onClick={() =>
+                item.url ? handleClick(item.url) : navigate(`/${item.icon}`)
+              }
+            >
+              <img src={iconMap[item.icon]} alt={item.icon} />
               <p className="typo-body">{item.text}</p>
             </div>
           );
         })}
+        <div
+          key={iconButton.length}
+          onClick={() => {
+            setSearchParams({ ["popup"]: "1" });
+          }}
+        >
+          <div className={styles.circle}>
+            <Plus />
+          </div>
+          <p className="typo-body">친구초대</p>
+        </div>
       </div>
+      <Character img={character} name="엄지척도하니" level={11} />
     </>
   );
 }

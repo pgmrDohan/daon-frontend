@@ -2,6 +2,7 @@
 $font-family-primary: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 
 $typography: (
+	header3: (size: 2.2rem, weight: 600, line-height: 3.2rem),
   subTitle: (size: 1.6rem, weight: 500, line-height: 2.2rem),
 	body: (size:1.2rem, weight:500, line-height: 3rem)
 );

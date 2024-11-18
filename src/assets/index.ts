@@ -6,3 +6,4 @@ export { default as oto } from "./icons/oto.png";
 export { default as shop } from "./icons/shop.png";
 
 export { default as coin } from "./images/coin.png";
+export { default as character } from "./images/character.png";
