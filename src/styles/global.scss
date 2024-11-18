@@ -1,0 +1,11 @@
+#root {
+	height: 100vh;
+	margin: 0 auto;
+	background-color: var(--theme-background);
+	@media (min-width: 400px) {width: 400px;}
+	overflow: hidden;
+}
+
+body {
+	background-color: #E5E5E5;
+}

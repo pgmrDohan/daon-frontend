@@ -1,10 +1,16 @@
 $spacings: (
-  "xs": 4px,
-  "sm": 8px,
-  "md": 16px,
-  "lg": 24px,
-  "xl": 32px
+  "xs": 5px,
+  "sm": 10px,
+  "md": 15px,
+  "lg": 25px,
+  "xl": 40px
 );
+
+:root {
+	@each $name, $size in $spacings {
+		--spacing-#{$name}: #{$size};
+	}
+}
 
 @each $name, $size in $spacings {
   .m-#{$name} { margin: $size; }

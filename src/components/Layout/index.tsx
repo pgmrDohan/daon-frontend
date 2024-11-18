@@ -3,6 +3,6 @@ import styles from './index.module.scss'
 
 export const Layout = () => {
 	return (
-		<><Outlet /></>
+		<div className={`${styles.Layout} pt-xl`}><Outlet /></div>
 	)
 };

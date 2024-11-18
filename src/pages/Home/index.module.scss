@@ -1,1 +1,37 @@
-/* Home Page Styling */
+.settingsIcon {
+	width: var(--font-size-subTitle);
+	height: var(--font-size-subTitle);
+	color: var(--color-grey-light);
+}
+
+.headers {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	color: var(--theme-text);
+}
+
+.iconButton {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: var(--spacing-md);
+	div{
+		display: flex;
+		flex-direction: column;
+    align-items: center;
+
+		img{
+		width: 3.6rem;
+		height: 3.6rem;
+		}
+
+		p{
+			color: var(--theme-text);
+		}
+	}
+}

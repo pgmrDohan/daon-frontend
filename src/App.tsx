@@ -1,14 +1,13 @@
 import { RouterProvider } from 'react-router-dom';
 
-import { useDarkMode, useRouter } from '@/hooks';
+import { useRouter } from '@/hooks';
 import { useEffect } from 'react';
 
 const App = () => {
 	const router = useRouter();
-	const { applyTheme } = useDarkMode();
 
 	useEffect(()=>{
-		applyTheme();
+		document.documentElement.setAttribute('data-theme', 'dark');
 	},[]);
 
 	return (
