@@ -1,11 +1,12 @@
 #root {
-	height: 100vh;
-	margin: 0 auto;
-	background-color: var(--theme-background);
-	overflow: hidden;
-	@media (min-width: 400px) {width: 400px;}
+  height: 100vh;
+  margin: 0 auto;
+  background-color: var(--theme-background);
+  @media (min-width: 400px) {
+    width: 400px;
+  }
 }
 
 body {
-	background-color: var(--theme-background);
+  background-color: var(--theme-background);
 }

@@ -1,4 +1,4 @@
-import { Cash, Character } from "@/components";
+import { Cash, Character, DateSelect } from "@/components";
 import { get_userdata } from "@/utils";
 import { getCookie } from "@/utils/cookies";
 import { useEffect, useState } from "react";
@@ -111,6 +111,7 @@ export function Home() {
         </div>
       </div>
       <Character img={character} name="엄지척도하니" level={11} />
+      <DateSelect className={`mt-md`} />
     </>
   );
 }
